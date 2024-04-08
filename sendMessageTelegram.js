@@ -5,7 +5,9 @@ async function enviarScript() {
 	if(!textarea) throw new Error("No hay una conversación abierta")
 
   const line = 'Mensaje personalizado'; // Coloca el mensaje que enviaras
-	for(let i = 0; i < 1000; i++) { // reemplaza `1000` por la cantidad de veces que se enviará el mensaje
+	const count = 1000; // reemplaza `1000` por la cantidad de veces que se enviará el mensaje
+
+	for(let i = 0; i < count; i++) {
 		console.log(line)
 
 		textarea.focus();
@@ -16,7 +18,7 @@ async function enviarScript() {
 		  main.querySelector(`button[title="Send Message"]`).click();
 		}, 100);
 
-		if(i < 1000) await new Promise(resolve => setTimeout(resolve, 250));
+		if(i < count) await new Promise(resolve => setTimeout(resolve, 250));
 	}
 
 	return null;
